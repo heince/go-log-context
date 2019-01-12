@@ -29,6 +29,9 @@ func Context() *log.Entry {
 		panic("can't get current working directory")
 	}
 
+    // set output style to JSON
+	log.SetFormatter(&log.JSONFormatter{})
+
 	// Program Name can be set on Environment variable
 	// set "ITG_PROGRAM_NAME"
 	programName := os.Getenv("ITG_PROGRAM_NAME")
